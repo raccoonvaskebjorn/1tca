@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+    <title>1TCA</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./res/css/swiper.css">
+    <script src="./res/js/jq.js"></script> 
+    <script src="./res/js/swiper.js"></script> 
+  </head>
+
+  <body class="">
+    <style>
+      @font-face {
+        font-family: "Metropolis";
+        src: url('./res/fonts/PsoUsrStandart-Regular.otf') format("otf"),
+          url('./res/fonts/Metropolis-Regular') format("truetype");
+        font-style: normal;
+        font-weight: normal;
+      }
+      html{ width:100%; height:100%; background:#fff; color:#212529; font-size:14px; line-height:1.25em; font-family:"Inter", "Arial" monospace; padding:0px; margin:0px; }
+      body{ min-height:100%; display:flex; flex-flow:column nowrap; align-items:stretch; justify-content:stretch; padding:0px; margin:0px; gap:0; position:relative; }
+      *{ box-sizing:border-box; outline:none; resize:none; } 
+      h1, h2, h3, h4, h5, h6, p, span{ cursor:default; color: #212529; font-family:"Inter", "Arial"; } 
+      a{ font-family:"Inter", "Arial"; color:#212529; text-decoration:none; } 
+      button{ cursor:pointer; border:0; }
+      .resize{ flex-grow:1; flex-shrink:1; }
+      .noresize{ flex-grow:0; flex-shrink:0; } 
+      .al{ text-align:left; }
+      .ac{ text-align:center; }
+      .ar{ text-align:right; }
+      .centered{ display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:center; gap:15px; padding:0px; margin:auto; cursor:default; } 
+      .jc{ justify-content:center; } 
+      .content{ max-width:1110px; padding:0px; margin:0px auto; position:relative; }
+      .btn{ display:block; height:48px; padding:0px 25px; margin:0px auto; background:#006FF9; color:#fff; text-align:center; font-family:"Inter","Arial"; font-size: 16px; font-weight: 400; line-height: 24px; border:0; border-radius:4px; cursor:pointer; text-transform:uppercase; }
+      .btn.white{ background:#fff; border:solid 1px #006FF9; color:#006FF9; } 
+      @media screen and (max-width:960px) { 
+        .content{ padding:0px 10px; }
+      }
+    </style>
+    
+    <header class="noresize"> 
+      <style>
+        header{ display:block; width:100%; min-height:750px; padding:0px; margin:0px; position:relative; overflow-x:hidden; } 
+        header::after{ display:block; content:""; position:absolute; top:0px; right:0px; width:165px; height:165px; background:rgba(255,255,255,0.1); transform-origin:center; transform: rotateZ(45deg); margin:520px -80px 0px 0px; } 
+        #blue_bg::after{ display:block; content:""; position:absolute; top:227px; left:240px; width:110px; height:110px; background:rgba(255,255,255,0.1); } 
+        #blue_bg{ width:100%; height:100%; position:absolute; top:0px; bottom:0px; left:50%; padding:0px; margin:0px 0px 0px 205px; background:#0A236D;}
+        #blue_bg::before{ display:block; content:""; position:absolute; left:0px; bottom:0px; width:32px; height:30px; background:#fff; } 
+        #blue_bg div{ display:block; position:absolute; top:540px; left:120px; width:110px; height:110px; background:rgba(255,255,255,0.1); transform-origin:center; transform: rotateZ(27deg); } 
+        #blue_bg b{ display:block; position:absolute; top:25px; left:0px; width:35px; height:47px; background:#fff; } 
+        #navigation{ height:100px; }
+        #navigation .wrapper{ height:100px; display:flex; flex-flow:row nowrap; justify-content:stretch; align-items:center; gap:25px; padding:0px; margin:0px; }
+        #navigation ul{ height:50px; display:flex; flex-flow:row nowrap; justify-content:start; align-items:center; gap:0px; padding:0px; margin:0px; list-style:none; text-align:left; }
+        #navigation li{ height:100%; padding:0px 25px; }
+        #navigation li a{ height:100%; display:flex; flex-flow:row nowrap; justify-content:center; align-items:center; gap:0; font-size:15px; } 
+        #navigation .cart{ width:38px; height:38px; border-radius:50%; border:0; background:#fff; padding:0px; margin:0px; text-align:center; }
+        #navigation .contact{ height:38px; border-radius:4px; border:0; background:#fff; padding:0px 25px; margin:0px; text-align:center; font-family:"Inter","Arial"; font-size: 14px; font-weight: 500; line-height: 20px; color:#212529; }
+        
+        #header_info{}
+        #header_info .wrapper{ display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:center; gap:70px; padding:0px; margin:0px; position:relative; }
+        #header_info .description{  max-width:500px; }
+        #header_info .description h4{ font-size: 14px; font-weight: 600; line-height: 12px; letter-spacing: 2px; text-align: left; color:#006FF9; padding:0px; margin:0px 0px 8px 0px; text-transform:uppercase; }
+        #header_info .description h3{ font-size: 44px; font-weight: 500; line-height: 52px; text-align: left; padding:0px; margin:0px 0px 12px 0px; }
+        #header_info .description p{ font-size: 16px; font-weight: 400; line-height: 25px; text-align: left; color:#6F7074; padding:0px; margin:0px 0px 30px 0px; }
+        #header_info .description .buttons{ display:flex; flex-flow:row nowrap; justify-content:start; align-items:center; gap:20px; padding:0px; margin:0px; }
+        #header_info .description .buttons button{ margin:0; }
+        #header_info .image{ position:relative; max-width:500px; }
+        #header_info .image::before{ display:block; content:""; position:absolute; bottom:9px; left:9px; border-radius:50%; background:#006FF9; width:480px; height:480px; }
+        #header_info .image img{ border-radius: 0px 0px 50% 50%; position:relative; } 
+        #header_info .socials{ position:absolute; bottom:-90px; left:0px; display:flex; flex-flow:row nowrap; justify-content:start; align-items:center; gap:16px; } 
+        #header_info .socials a{ display:flex; flex-flow:row nowrap; justify-content:center; align-items:center; gap:0; width:24px; height:24px; padding:0px; margin:0px; } 
+
+        @media screen and (max-width:960px) { 
+          #navigation .wrapper{ position:fixed; top:0px; left:0px; width:300px; height:500px; }
+          #navigation .wrapper ul{ flex-flow:column nowrap; }
+        }
+      </style> 
+      <div id="blue_bg"><div></div><b></b></div>
+      <div id="navigation">
+        <div class="content">
+          <div class="wrapper">
+            <a href="/" class="noresize"><img src="./res/img/logo.svg"></a>
+            <div class="noresize al">
+              <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">The Secience</a></li>
+                <li><a href="/">Shop Bulk</a></li>
+                <li><a href="/">Ordering</a></li>
+                <li><a href="/">News</a></li> 
+              </ul>
+            </div>
+            <div class="resize"></div>
+            <button class="cart noresize"><img src="./res/img/icon_cart.svg" alt=""></button>
+            <button class="contact">Contact</button>
+          </div>
+        </div>
+      </div>
+      <div id="header_info">
+        <div class="content">
+          <div class="wrapper">
+            <div class="description resize">
+              <h4>Made in Britain</h4>
+              <h3>A game changer in <br>the ethical fight against <br>Covid-19</h3>
+              <p>Textiles are one of the main vectors for viruses and bacteria. Textiles treat with HeiQ viroblock help stop cross- contamination from surface to face covering.</p>
+              <div class="buttons">
+                <button class="btn">Shop now</button>
+                <button class="btn white">Learn more</button>
+              </div>
+            </div>
+            <div class="image noresize">
+              <img src="./res/img/header_photo.png" alt="">
+            </div>
+            <div class="socials">
+              <a href="https://fb.com"><img src="./res/img/social_fb.svg" alt=""></a>
+              <a href="https://youtube.com"><img src="./res/img/social_yt.svg" alt=""></a>
+              <a href="https://linkedin.com"><img src="./res/img/social_in.svg" alt=""></a>
+              <a href="https://instagramm.com"><img src="./res/img/social_ig.svg" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="resize">
+      <style>
+        main{  } 
+        main h1{ display:flex; flex-flow:column nowrap; justify-content:center; align-items:stretch; gap:15px; margin:0px auto; padding:0px; max-width:1110px; min-height:240px; }
+        main h1 b{ font-weight:600; font-size:36px; line-height:43.57px; font-family:"Inter", "Arial"; color:#212529; text-align:center; }
+        main h1 span{ display:block; color:#999; text-align:center; font-family:"Metropolis", "Inter", "Arial"; font-size: 15px; font-weight: 400; line-height: 26px; } 
+        main h2{ display:flex; flex-flow:column nowrap; justify-content:center; align-items:stretch; gap:15px; margin:0px auto; padding:120px 0px 60px 0px; max-width:1110px; }
+        main h2 b{ font-weight:600; font-size:36px; line-height:43.57px; font-family:"Inter", "Arial"; color:#212529; text-align:center; padding:0px; margin:0px 0px 20px 0px;}
+        main h2 span{ display:block; color:#999; text-align:center; font-family:"Metropolis", "Inter", "Arial"; font-size: 15px; font-weight: 400; line-height: 26px; max-width:570px; margin:0px auto; }
+      </style>
+      <h1>
+        <b>The Unique properties of our 1TCA mask</b>
+        <span>British public is required to wear a face mask when on trains, in shops and <br>any enclosed space, 1TcA has launched the first.</span>
+      </h1>
+
+      <section id="properties">
+        <style>
+          #properties{ position:relative; padding-bottom:120px; } 
+          #properties .vector{ position:absolute; top:0px; right:0px; z-index:-1; }
+          #properties .wrapper{ display:flex; flex-flow:row nowrap; justify-content:stretch; align-items:stretch; gap:46px; padding:0px; margin:0px; }
+          #properties .wrapper .item{ flex-grow:1; flex-shrink:1; padding:30px; background:#fff; border:solid 1px #6F7074; border-radius:10px; position:relative; min-height:335px; }
+          #properties .wrapper .item.blue{ background:#006FF9; border-color:#006FF9; } 
+          #properties .wrapper .item .icon{ display:flex; flex-flow:row nowrap; justify-content:center; align-items:center; gap:0; width:62px; height:62px; padding:0px; margin:0px 0px 35px 0px; background:#006FF9; color:#fff; border-radius:8px; } 
+          #properties .wrapper .item.blue .icon{ background:#fff; color:#006FF9; } 
+          #properties .wrapper .item h3{ font-size: 22px; font-weight: 500; line-height: 22px; text-align: left; color:#000; padding:0px 0px 15px 0px; margin:0px; } 
+          #properties .wrapper .item.blue h3{ color:#fff; }
+          #properties .wrapper .item p{ font-size: 15px; font-weight: 400; line-height: 28px; text-align: left; color:#6F7074; padding:0px; margin:0px 0px 25px 0px; } 
+          #properties .wrapper .item.blue p{ color:#FAFAFA; }
+          #properties .wrapper .item a{ font-size: 16px; font-weight: 500; line-height: 15px; text-align: left; position:relative; margin:0px; padding:0px; }
+          #properties .wrapper .item a::after{ display:block; content:""; position:absolute; top:0px; left:100%; width:50%; height:100%; background:transparent url('./res/img/icon_arrow_right.svg') 8px 7px no-repeat; } 
+          #properties .wrapper .item.blue a{ color:#fff; }
+          #properties .wrapper .item.blue a::after{ background-image:url('./res/img/icon_arrow_right_w.svg'); } 
+        </style>
+        <img src="./res/img/properties.svg" class="vector" alt="">
+        <div class="content">
+          <div class="wrapper">
+            <div class="item">
+              <div class="icon"><img src="./res/img/icon_effective.svg" alt=""></div>
+              <h3>Effective</h3>
+              <p>HeiQ viroblock works to deactivate. the virus with minutes and effective for 30 washes.</p>
+              <a href="/">Learn more</a>
+            </div>
+            <div class="item blue">
+              <div class="icon"><img src="./res/img/icon_recyclable.svg" alt=""></div>
+              <h3>Recyclable</h3>
+              <p>HeiQ viroblock works to deactivate. the virus with minutes and effective for 30 washes.</p>
+              <a href="/">Learn more</a>
+            </div>
+            <div class="item">
+              <div class="icon"><img src="./res/img/icon_practical.svg" alt=""></div>
+              <h3>Practical</h3>
+              <p>HeiQ viroblock works to deactivate. the virus with minutes and effective for 30 washes.</p>
+              <a href="/">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recyclable">
+        <style>
+          #recyclable{ padding-bottom:110px; }
+          #recyclable .wrapper{ display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:center; gap:79px; padding:0px; margin:0px; } 
+          #recyclable .image{ width:520px; height:520px; background:rgba(0, 111, 249, 0.1); border-radius:50%; position:relative; padding:0px; margin:0px; } 
+          #recyclable .image img{ position:absolute; }
+          #recyclable .image .top{ width:323px; height:auto; left:35px; top:25px; }
+          #recyclable .image .bottom{ width:267px; height:auto; left:187px; top:293px; border-radius:2px; } 
+          #recyclable .description{ max-width:450px; }
+          #recyclable .description h4{ font-size: 14px; font-weight: 600; line-height: 18px; letter-spacing: 2px; text-align: left; color: #006FF9; margin:0px 0px 15px 0px; padding:0px; text-transform:uppercase; }
+          #recyclable .description h3{ font-size: 26px; font-weight: 600; line-height: 36px; text-align: left; margin:0px 0px 15px 0px; padding:0px; }
+          #recyclable .description p{ font-size: 15px; font-weight: 400; line-height: 28px; text-align: left; color: #6F7074; margin:0px 0px 35px 0px; padding:0px; }
+          #recyclable .description a{ font-size: 16px; font-weight: 500; line-height: 15px; text-align: left; position:relative; margin:0px; padding:0px; }
+          #recyclable .description a::after{ display:block; content:""; position:absolute; top:0px; left:100%; width:50%; height:100%; background:transparent url('./res/img/icon_arrow_right.svg') 8px 7px no-repeat; }
+        </style>
+        <div class="content">
+          <div class="wrapper">
+            <div class="image noresize">
+              <img src="./res/img/recyclable1.png" alt="" class="top">
+              <img src="./res/img/recyclable2.png" alt="" class="bottom">
+            </div>
+            <div class="description resize">
+              <h4>Enhanced with HeiQ Viroblock</h4>
+              <h3>The UK’s First Fully Recyclable & Sustainable Face Mask</h3>
+              <p>At a time when the British public is required to wear a face mask when on trains, in shops and any enclosed space, 1TcA has launched the first British made reusable, sustainable face masks and snoods, manufactured using GRS fabric, woven from recycled waste plastic and treated.</p>
+              <a href="/">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="protect">
+        <style>
+          #protect{ background:#F4F9FE; padding:80px 0px 100px 0px; } 
+          #protect .wrapper{ display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:center; gap:30px; padding:0px; margin:0px; }
+          #protect .wrapper .item{ text-align:center; max-width:350px; }
+          #protect .wrapper .item img{ width:100%; height:auto; }
+          #protect .wrapper .item h4{ font-family:"Inter"; font-size: 26px; font-weight: 600; line-height: 22px; text-align: center; color: #212529; }
+          #protect .wrapper .item p{ font-family:"Inter"; font-size: 16px; font-weight: 400; line-height: 24px; text-align: center; color: #6F7074; padding:0px 20px; margin-bottom:20px; }
+          #protect .wrapper .item button{ margin:0px auto; }
+        </style>
+        <div class="content">
+          <div class="wrapper">
+            <div class="item">
+              <img src="./res/img/protect_family.png" alt="">
+              <h4>Protect your family</h4>
+              <p>Purchase our family packs of masks online</p>
+              <button class="btn">Shop now</button>
+            </div>
+            <div class="item">
+              <img src="./res/img/protect_public.png" alt="">
+              <h4>Protect The Public</h4>
+              <p>Purchase our family packs of masks online</p>
+              <button class="btn">Shop now</button>
+            </div>
+            <div class="item">
+              <img src="./res/img/protect_employers.png" alt="">
+              <h4>Protect Your Employess</h4>
+              <p>Purchase our family packs of masks online</p>
+              <button class="btn">Shop now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reasons">
+        <style>
+          #reasons{}
+          #reasons .wrapper{ display:flex; flex-flow:row nowrap; justify-content:stretch; align-items:center; gap:110px; }
+          #reasons .description{ /*max-width:450px;*/ }
+          #reasons .description h3{ font-size: 36px; font-weight: 600; line-height: 43.57px; text-align: left; padding:0px; margin:0px 0px 20p 0px; }
+          #reasons .description ul{ list-style:none; padding:0px; margin:0px; } 
+          #reasons .description li{ font-family:"Inter", "Arial"; font-size: 16px; font-weight: 400; line-height: 36px; text-align: left; color:#6F7074; margin:0px; padding:0px 0px 0px 24px; background:transparent url('./res/img/icon_ok.svg') left 10px no-repeat; }
+          #reasons .image{ max-width:450px; position:relative; }
+          #reasons .photo{ width:100%; }
+          #reasons .signum{ position:absolute; bottom:0px; left:0px; width:172px; height:auto; margin:0px 0px -45px -60px; }
+        </style>
+        <div class="content">
+          <div class="wrapper">
+            <div class="description resize">
+              <h3>5 Reasons to use <br>1TcA Masks</h3>
+              <ul>
+                <li>Enhanced with HeiQ Viroblock</li>
+                <li>Reduces cross contamination from hand to face covering<li>
+                <li>Sustanable – protecting you and your planet<li>
+                <li>British Manufacturing – helping the economy<li>
+                <li>Cost-effective with all profits donated to our chosen charities<li>
+              </ul>
+            </div>
+            <div class="image noresize">
+              <img src="./res/img/reasons.png" class="photo" alt="">
+              <img src="./res/img/ppb.svg" class="signum" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h2>
+        <b>What our client say about us</b>
+        <span>British public is required to wear a face mask when on trains, in shops and any enclosed space, 1TcA has launched the first.</span>
+      </h2>
+
+      <section id="feedback">
+        <style>
+          #feedback{ padding-bottom:300px; }
+          #feedback .slider{ height:410px; background:#dedede; }
+          .swiper { width:100%; max-width:1110px; height:500px; overflow:hidden;  }
+          .swiper-slide img{ width:100%; height:500px; }
+        </style>
+        <div class="content"> 
+            <div class="slider">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="./res/img/reasons.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./res/img/reasons.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./res/img/reasons.png" alt=""></div>
+                  <div class="swiper-slide"><img src="./res/img/reasons.png" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div> 
+              </div>
+            </div>
+        </div>
+      </section>
+
+    </main> 
+
+    <footer class="noresize">
+      <style>
+        footer{ background:#212529; padding:0px; margin:0px; position:relative; /*overflow:hidden;*/ }
+        footer::before{ display:block; content:""; position:absolute; /*bottom:-10px; right:-24px;*/ bottom:0px; right:0px; width:100%; height:100%; background:transparent url('./res/img/corner_bottom_right.svg') right bottom no-repeat; }
+
+        #bluebox{ position:absolute; left:0px; right:0px; top:-165px; }
+        #bluebox .content{ position:relative; overflow:hidden; }
+        #bluebox .wrapper{ display:flex; flex-flow:column nowrap; justify-content:center; align-items:center; gap:40px; background:#006FF9; position:relative; height:330px; padding:0px; margin:0px; border-radius:10px; } 
+        #bluebox .wrapper h3{ font-size: 36px; font-weight: 600; line-height: 44px; text-align: center; color:#fff; padding:0px; margin:0px; } 
+        #leftbox{display:block; content:""; position:absolute; bottom:-60px; left:-50px; width: 188.61px; height: 226.91px; border-radius: 37px; background:rgba(255,255,255,0.1); transform-origin:center; transform:rotateZ(46.95deg); z-index:49; }
+        #rightbox{display:block; content:""; position:absolute; top:-60px; right:0px; width: 188.61px; height: 226.91px; border-radius: 37px; background:rgba(255,255,255,0.1); transform-origin:center; transform:rotateZ(-127deg); z-index:50; }
+        #bluebox a{ display:flex; flex-flow:row nowrap; justify-content:center; align-items:center; gap:8px; height:56px; padding:0px 30px; background:#fff; border-radius:2px; font-size: 20px; font-weight: 500; line-height: 30px; letter-spacing: 0.04em; color:#212529; }
+
+        footer .info{ padding-top:240px; padding-bottom:50px; }
+        footer .info .wrapper{ width:100%; display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:start; gap:10px; padding:0px; margin:0px; }
+        footer .info .wrapper .item{ text-align:left; flex-grow:0; flex-shrink:0; width:20%; }
+        footer .info .wrapper .item h4{ font-size: 16px; font-weight: 500; line-height: 21px; text-align: left; color:#fff; border-bottom:solid 1px #6F7074; padding:0px 0px 12px 0px; margin:0px 0px 12px 0px; }
+        footer .info .wrapper .item a{ display:block; width:auto; text-align:left; font-family:"Inter", "Arial"; font-size: 14px; font-weight: 400; line-height: 30px; text-align: left; color:#fafafa; }
+        footer .info .wrapper .item a.icon{ font-size:13px; line-height:14px; padding-left:20px; margin-top:20px; background-position:left top; background-repeat:no-repeat; }
+        footer .info .wrapper .item a.icon.phone{ background-image:url('./res/img/icon_phone.svg'); }
+        footer .info .wrapper .item a.icon.mail{ background-image:url('./res/img/icon_mail.svg'); }
+        footer .info .wrapper .item a.icon.geo{ background-image:url('./res/img/icon_geo.svg'); }
+        footer .info .wrapper .item p{ font-family:"Inter", "Arial"; font-size: 14px; font-weight: 400; line-height: 22px; text-align: left; color:#fff; padding:20px 0px; margin:0px; }
+        footer .info .wrapper .item .socials{ display:flex; flex-flow:row nowrap; justify-content:start; align-items:center; gap:10px; padding:0px; margin:0px; }
+        footer .info .wrapper .item .socials a{ display:flex; flex-flow:row nowrap; justify-content:center; align-items:center; gap:0; width:24px; height:24px; padding:0px; margin:0px; }
+        footer .info .wrapper .item .signum{ width:120px; height:auto; }
+
+        footer .copyrights{ width:100%; height:110px; display:flex; flex-flow:row nowrap; justify-content:center; align-items:center; gap:0; font-family:"Inter","Arial"; font-size: 14px; font-weight: 400; line-height: 30px; color:#6F7074; border-top:solid 1px #6F7074; }
+      </style>
+      <div id="bluebox">
+        <div class="content">
+          <div id="leftbox"></div>
+          <div id="rightbox"></div>
+          <div class="wrapper">
+            <h3>All 1TCA profits are donated to charitable Causes <br>and community projects </h3>
+            <a href="/">Shop now <img src="./res/img/icon_arrow_right.svg"></a>
+          </div>
+        </div>
+      </div>
+      <div class="content info">
+        <div class="wrapper">
+          <div class="item">
+            <a href="/"><img src="./res/img/logo_small.svg" alt=""></a>
+            <p>Textiles are one of the main vectors for viruses and bacteria. Textiles treat with HeiQ viroblock.</p>
+            <div class="socials">
+              <a href="https://fb.com"><img src="./res/img/social_fb.svg" alt=""></a>
+              <a href="https://youtube.com"><img src="./res/img/social_yt.svg" alt=""></a>
+              <a href="https://linkedin.com"><img src="./res/img/social_in.svg" alt=""></a>
+              <a href="https://instagramm.com"><img src="./res/img/social_ig.svg" alt=""></a>
+            </div>
+          </div>
+          <div class="item">
+            <h4>Navigation</h4>
+            <a href="/">Shop</a>
+            <a href="/">About Us</a>
+            <a href="/">Contact Us</a>
+            <a href="/">Privacy Policy</a>
+            <a href="/">Cart</a>
+            <a href="/">Terms And Conditions</a>
+            <a href="/">Recyclable</a> 
+          </div>
+          <div class="item">
+            <h4>Company details</h4>
+            <a href="/" class="icon phone">020 7520 9260</a>
+            <a href="/" class="icon mail">Contact@1tca.com</a>
+            <a href="/" class="icon geo">Adam House, 7 – 10 Adams Street, The Strand, London WC2N 6AA</a>
+          </div>
+          <div class="item">
+            <h4>Our partner</h4>
+            <a href="/">HeiQ</a>
+            <a href="/">Project Plan B</a>
+            <a href="/"><img src="./res/img/ppb.svg" class="signum" alt=""></a>
+          </div>
+        </div>
+      </div>
+      <div class="content copyrights">
+        &copy; 2020 1TCA | PRIVACY POLICY | Disclaimer
+      </div>
+    </footer>
+
+  <script>
+    $(document).ready(function(){ 
+        var swiper = new Swiper(".swiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false 
+            },
+            pagination: { el: ".swiper-pagination" }
+        }); 
+        //swiper.slideNext();
+    });
+  </script>
+
+  </body>
+</html>
